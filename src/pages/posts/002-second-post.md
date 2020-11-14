@@ -4,6 +4,10 @@ date: '2020-11-13 09:00:00'
 author: 'John Doe'
 path: '/second-post'
 image: '../../images/html.jpg'
+tags:
+- code
+- design
+- tutorial
 ---
 
 Tutorial to HTML. 
