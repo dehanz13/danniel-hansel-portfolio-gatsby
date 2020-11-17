@@ -2,7 +2,6 @@
 title: 'Third Post - React Bootstrap vs Reactstrap'
 date: '2020-11-13 11:00:00'
 author: 'Danniel Hansel'
-path: '/Third-post'
 image: '../../images/bootstrap.png'
 tags:
 - react
