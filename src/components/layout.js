@@ -11,6 +11,7 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import '../styles/index.scss'
 import Header from "./header"
+import Footer from "./Footer"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -22,11 +23,17 @@ const Layout = ({ children }) => {
       }
     }
   `)
-
+    //After copying Font Awesome's CDN, change the "crossorigin" to capital O -> "crossOrigin" since we are in React.
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
+    
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossOrigin="anonymous"/>
+      <Header siteTitle={data.site.siteMetadata.title || `Title`} />
       <div className="container" id="content">
+        {children}
+      </div>
+      <Footer />
+      {/* <div className="container" id="content">
         <main>{children}</main>
         <footer style={{
           marginTop: `2rem`
@@ -35,7 +42,7 @@ const Layout = ({ children }) => {
           {` `}
           <a href="https://www.gatsbyjs.com">Danniel Hansel</a>
         </footer>
-      </div>
+      </div> */}
     </>
   )
 }
