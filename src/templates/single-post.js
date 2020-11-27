@@ -19,12 +19,13 @@ const SinglePost = ({ data, pageContext }) => {
 	//we need siteUrl. Since we're going keep needing it, let's put it in a variable.
 	const baseUrl = 'https://gatsbytutorial.co.uk/'
 
-	const disqusShortName = 'https-gatsbytutorial-co-uk'
-	const disqusConfig = {
-		identifier: data.markdownRemark.id,
-		title: post.title,
-		url: baseUrl + pageContext.slug
-	}
+	//Disqus App is broken atm...
+	// const disqusShortName = 'https-gatsbytutorial-co-uk'
+	// const disqusConfig = {
+	// 	identifier: data.markdownRemark.id,
+	// 	title: post.title,
+	// 	url: baseUrl + pageContext.slug
+	// }
 
 	return(
 		<Layout pageTitle={post.title} postAuthor={author} authorImageFluid={data.file.childImageSharp.fluid}>
