@@ -4,13 +4,19 @@ import { graphql, StaticQuery } from 'gatsby'
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Post from "../components/Post"
+import PaginationLinks from '../components/PaginationLinks'
 
-const IndexPage = () => (
+const IndexPage = () => {
+  const postsPerPage = 2;
+  //We need number of pages but we cant calculate the number of pages outside here because we need the 'data' from render={data => {
+  let numberOfPages
+  return(
   <Layout pageTitle="CodeBlog">
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
       <StaticQuery 
         query={indexQuery} 
         render={data => {
+          numberOfPages = Math.ceil(data.allMarkdownRemark.totalCount / postsPerPage)
           return (
             <div>
               {data.allMarkdownRemark.edges.map(({ node }) => (
@@ -25,41 +31,44 @@ const IndexPage = () => (
                   tags={node.frontmatter.tags}
                 />
               ))}
+              <PaginationLinks currentPage={1} numberOfPages={numberOfPages}/>
             </div>
           )
         }}
       />  
   </Layout>
-)
+  )
+}
 
 const indexQuery = graphql`
   query {
-    allMarkdownRemark(sort: { 
-        fields: [frontmatter___date], order: DESC}
-        limit: 2
-        ) {
-      edges {
-        node {
-          id
-          frontmatter {
-            title
-            date(formatString: "MMM Do YYYY")
-            author
-            tags
-            image {
-              childImageSharp {
-                fluid(maxWidth: 600) {
-                  ...GatsbyImageSharpFluid
+    allMarkdownRemark( sort: { 
+      fields: [frontmatter___date], order: DESC}
+      limit: 2
+      ) {
+        totalCount
+        edges {
+          node {
+            id
+            frontmatter {
+              title
+              date(formatString: "MMM Do YYYY")
+              author
+              tags
+              image {
+                childImageSharp {
+                  fluid(maxWidth: 600) {
+                    ...GatsbyImageSharpFluid
+                  }
                 }
               }
             }
+            fields{
+              slug
+            }
+            excerpt
           }
-          fields{
-            slug
-          }
-          excerpt
         }
-      }
     }
   }
 `
