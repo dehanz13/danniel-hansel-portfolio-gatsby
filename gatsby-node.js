@@ -9,6 +9,7 @@
 //Do some clever thing before we create the posts
 const { slugify } = require('./src/util/utilityFunctions');
 const path = require('path');
+const authors = require('./src/util/authors')
 
 //So, on createNode, it's executed each time one node is created in the graphql Schema. Could be something like a post or file system or image or url.
 //So, instead of writing the path for each posts, we want to generate it from the title automatically.
@@ -63,7 +64,10 @@ exports.createPages = ({ actions, graphql }) => {
 				//context is a way we use to pass something to your component that it'll be used later.
 				context: {
 					// Passing slug for template to use to get post.
-					slug: node.fields.slug
+					slug: node.fields.slug,
+					//This function below passes the author's image. Finds the post that matches the author's name. Then when we find it, it'll return this author. So we need to return .imageUrl -> just the image field.
+					//Find author imageUrl from authors and pass it to the single post template.
+					imageUrl: authors.find(x => x.name === node.frontmatter.author).imageUrl
 				}
 			})
 		})

@@ -10,4 +10,9 @@ tags:
 - engineering
 ---
 
-Welcome to Code Blog, I hope you enjoy our content. Feel free to like and share!
+Welcome to my Code Blog. This is where I share my ideas, thoughts and experiences as well as my partner's blogs. 
+
+If you would like to also post on Code Blog, don't hesitate to contact me!
+
+I hope you enjoy our content. Feel free to like and share!
+

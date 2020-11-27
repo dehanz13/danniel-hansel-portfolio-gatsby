@@ -1,7 +1,7 @@
 ---
 title: 'Second Post - HTML'
 date: '2020-11-13 09:00:00'
-author: 'John Doe'
+author: 'Danniel Hansel'
 image: '../../images/html.jpg'
 tags:
 - code
