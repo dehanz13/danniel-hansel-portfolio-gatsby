@@ -35,6 +35,7 @@ const Layout = ({ authorImageFluid, children, pageTitle, postAuthor }) => (
   //     }
   //   }
   // `)
+  
     //After copying Font Awesome's CDN, change the "crossorigin" to capital O -> "crossOrigin" since we are in React.
     render={data => (
       <>

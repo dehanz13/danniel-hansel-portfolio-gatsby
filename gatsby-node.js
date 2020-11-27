@@ -40,6 +40,7 @@ exports.createPages = ({ actions, graphql }) => {
 		singlePost: path.resolve('src/templates/single-post.js'),
 		tagsPage: path.resolve('src/templates/tags-page.js'),
 		tagPosts: path.resolve('src/templates/tag-posts.js'),
+		postList: path.resolve('src/templates/post-list.js'),
 	}
 
 	return graphql(`
@@ -100,9 +101,6 @@ exports.createPages = ({ actions, graphql }) => {
 			tagPostCounts[tag] = (tagPostCounts[tag] || 0 ) + 1;
 		})
 
-		console.log(tags)
-		console.log(tagPostCounts)
-
 		//now we need to remove duplicate entries using lodash method.
 		tags = _.uniq(tags)
 
@@ -123,6 +121,28 @@ exports.createPages = ({ actions, graphql }) => {
 				component: templates.tagPosts,
 				context: {
 					tag,
+				}
+			})
+		})
+
+		//Declare a variable that's going to determine how many posts per page we want.
+		const postsPerPage = 2
+		//We also need a variable that calculates the total number of pages. indicates which page we're in.
+		const numberOfPages = Math.ceil(posts.length / postsPerPage) //This ceiling method will round up the number. so 3.33 would be 4. 
+		//Set an array that loops through number of pages. Let's create a virtual array just to loop through the number of pages.
+		Array.from({ length: numberOfPages }).forEach((_, index) => {
+			const isFirstPage = index === 0
+			const currentPage = index + 1
+
+			if(isFirstPage) return
+
+			createPage({
+				path: `/page/${currentPage}`,
+				component: templates.postList,
+				context: {
+					limit: postsPerPage,
+					skip: index * postsPerPage,
+					currentPage
 				}
 			})
 		})
