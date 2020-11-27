@@ -2,6 +2,7 @@ import React from 'react'
 import { graphql, Link } from 'gatsby'
 import { Badge, Card, CardBody, CardSubtitle } from 'reactstrap'
 import Img from 'gatsby-image'
+//import { DiscussionEmbed } from 'discus-react'
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -11,9 +12,19 @@ import authors from '../util/authors'
 
 //this is similar to the Post component. But we are not using Post because we are not going to have a title. 
 //But it won't be a problem because we wont use this format anywhere else. So we don't need to give it its component.
-const SinglePost = ({ data }) => {
+const SinglePost = ({ data, pageContext }) => {
 	const post = data.markdownRemark.frontmatter;
 	const author = authors.find(x => x.name === post.author) //same thing as in the gatsby-node
+
+	//we need siteUrl. Since we're going keep needing it, let's put it in a variable.
+	const baseUrl = 'https://gatsbytutorial.co.uk/'
+
+	const disqusShortName = 'https-gatsbytutorial-co-uk'
+	const disqusConfig = {
+		identifier: data.markdownRemark.id,
+		title: post.title,
+		url: baseUrl + pageContext.slug
+	}
 
 	return(
 		<Layout pageTitle={post.title} postAuthor={author} authorImageFluid={data.file.childImageSharp.fluid}>
@@ -40,6 +51,74 @@ const SinglePost = ({ data }) => {
 						
 					</CardBody>
 				</Card>
+				<h3 className="text-center">
+					Share this post!
+				</h3>
+				<div className="text-center social-share-links">
+					<ul>
+						<li>
+							<a 
+								href={
+									'https://www.facebook.com/sharer/sharer.php?u=' + 
+									baseUrl + 
+									pageContext.slug
+								} 
+								className="facebook" 
+								target="_blank" 
+								rel="noopener noreferrer"
+							>
+								<i className="fab fa-facebook-f fa-2x" />
+							</a>
+						</li>
+						<li>
+							<a 
+								href={
+									'https://www.twitter.com/share?url=' + 
+									baseUrl + 
+									pageContext.slug +
+									'&text=' +
+									post.title +
+									'&via' +
+									'twitterHandle'
+								} 
+								className="twitter" 
+								target="_blank" 
+								rel="noopener noreferrer"
+							>
+								<i className="fab fa-twitter fa-2x" />
+							</a>
+						</li>
+						<li>
+							<a 
+								href={
+									'https://plus.google.com/share?url=' + 
+									baseUrl + 
+									pageContext.slug
+								} 
+								className="google" 
+								target="_blank" 
+								rel="noopener noreferrer"
+							>
+								<i className="fab fa-google fa-2x" />
+							</a>
+						</li>
+						<li>
+							<a 
+								href={
+									'https://www.linkedin.com/sharerArticle?url=' + 
+									baseUrl + 
+									pageContext.slug
+								} 
+								className="linkedin" 
+								target="_blank" 
+								rel="noopener noreferrer"
+							>
+								<i className="fab fa-linkedin fa-2x" />
+							</a>
+						</li>
+					</ul>
+				</div>
+				{/* <DiscussionEmbed shortName={disqusShortName} config={disqusConfig} /> */}
 		</Layout>
 	)
 }
