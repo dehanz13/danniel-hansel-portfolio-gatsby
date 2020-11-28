@@ -11,7 +11,7 @@ const IndexPage = () => {
   //We need number of pages but we cant calculate the number of pages outside here because we need the 'data' from render={data => {
   let numberOfPages
   return(
-  <Layout pageTitle="CodeBlog">
+  <Layout pageTitle="Code Blog">
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
       <StaticQuery 
         query={indexQuery} 
