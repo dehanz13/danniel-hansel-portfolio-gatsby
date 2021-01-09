@@ -8,12 +8,13 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { slugify } from "../util/utilityFunctions"
 import authors from '../util/authors'
-
+import BlogInfo from '../components/BlogInfo'
 
 //this is similar to the Post component. But we are not using Post because we are not going to have a title. 
 //But it won't be a problem because we wont use this format anywhere else. So we don't need to give it its component.
 const SinglePost = ({ data, pageContext }) => {
 	const post = data.markdownRemark.frontmatter;
+	const readTime = data.markdownRemark;
 	const author = authors.find(x => x.name === post.author) //same thing as in the gatsby-node
 
 	//we need siteUrl. Since we're going keep needing it, let's put it in a variable.
@@ -36,8 +37,11 @@ const SinglePost = ({ data, pageContext }) => {
 						fluid={post.image.childImageSharp.fluid} />
 					<CardBody>
 						<CardSubtitle>
-							<span className="text-info">{post.date}</span> by{' '}
-							<span className="text-info">{post.author}</span>
+							{/* <span className="text-info">{post.date}</span> by{' '}
+							<span className="text-info">{post.author}</span> {' • '}
+							<span className="text-info">{readTime.timeToRead} min read</span> {' • '}
+							<span className="text-info"><FiCoffee /></span> */}
+							<BlogInfo date={post.date} author={post.author} timeToRead={readTime.timeToRead} />
 						</CardSubtitle>
 						<div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
 						<ul className="post-tags">
@@ -145,6 +149,7 @@ export const postQuery = graphql`
 					}
 				}
 			}
+			timeToRead
 		}
 		file(relativePath: { eq: $imageUrl}) {
 			childImageSharp{

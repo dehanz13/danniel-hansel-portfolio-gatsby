@@ -2,8 +2,11 @@ import React from 'react';
 import { Link } from 'gatsby';
 import { Badge, Card, CardTitle, CardText, CardSubtitle, CardBody } from 'reactstrap'
 import Img from 'gatsby-image'
+import { FiCoffee } from '@react-icons/all-files/fi/FiCoffee'
 
-const Post = ({ title, author, slug, date, body, fluid, tags }) => {
+import BlogInfo from './BlogInfo'
+
+const Post = ({ title, author, slug, date, body, fluid, tags, timeToRead }) => {
 	return(
 		<Card>
 			<Link to={slug}>
@@ -14,8 +17,11 @@ const Post = ({ title, author, slug, date, body, fluid, tags }) => {
 					<Link to={slug}>{title}</Link>
 				</CardTitle>
 				<CardSubtitle>
-					<span className="text-info">{date}</span> by{' '}
-					<span className="text-info">{author}</span>
+					{/* <span className="text-info">{date}</span> by{' '}
+					<span className="text-info">{author}</span> {' • '}
+					<span className="text-info">{timeToRead} min read</span> {' • '}
+					<span className="text-info"><FiCoffee /></span> */}
+					<BlogInfo date={date} author={author} timeToRead={timeToRead}/>
 				</CardSubtitle>
 				<CardText>{body}</CardText>
 				<ul className="post-tags">

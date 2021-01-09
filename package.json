@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "@react-icons/all-files": "^4.1.0",
     "bootstrap": "^4.5.3",
     "disqus-react": "^1.0.10",
     "gatsby": "^2.27.4",

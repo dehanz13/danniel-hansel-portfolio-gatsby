@@ -29,6 +29,7 @@ const IndexPage = () => {
                   body={node.excerpt}
                   fluid={node.frontmatter.image.childImageSharp.fluid}
                   tags={node.frontmatter.tags}
+                  // timeToRead={node.timeToRead}
                 />
               ))}
               <PaginationLinks currentPage={1} numberOfPages={numberOfPages}/>
@@ -42,10 +43,10 @@ const IndexPage = () => {
 
 const indexQuery = graphql`
   query {
-    allMarkdownRemark( sort: { 
-      fields: [frontmatter___date], order: DESC}
+    allMarkdownRemark( 
+      sort: { fields: [frontmatter___date], order: DESC }
       limit: 2
-      ) {
+    ) {
         totalCount
         edges {
           node {
