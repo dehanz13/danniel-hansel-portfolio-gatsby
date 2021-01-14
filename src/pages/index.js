@@ -5,6 +5,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Post from "../components/Post"
 import PaginationLinks from '../components/PaginationLinks'
+import Hero from '../components/Hero'
 
 const IndexPage = () => {
   const postsPerPage = 2;
@@ -13,7 +14,9 @@ const IndexPage = () => {
   return(
   <Layout pageTitle="Danniel Hansel">
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-      <StaticQuery 
+    <Hero />
+
+      {/* <StaticQuery 
         query={indexQuery} 
         render={data => {
           numberOfPages = Math.ceil(data.allMarkdownRemark.totalCount / postsPerPage)
@@ -36,7 +39,7 @@ const IndexPage = () => {
             </div>
           )
         }}
-      />  
+      />   */}
   </Layout>
   )
 }

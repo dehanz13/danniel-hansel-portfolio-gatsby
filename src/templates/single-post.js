@@ -41,7 +41,8 @@ const SinglePost = ({ data, pageContext }) => {
 							<span className="text-info">{post.author}</span> {' • '}
 							<span className="text-info">{readTime.timeToRead} min read</span> {' • '}
 							<span className="text-info"><FiCoffee /></span> */}
-							<BlogInfo date={post.date} author={post.author} timeToRead={readTime.timeToRead} />
+							{/* <BlogInfo date={post.date} author={post.author} timeToRead={readTime.timeToRead} /> */}
+							<BlogInfo date={post.date} author={post.author} />
 						</CardSubtitle>
 						<div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
 						<ul className="post-tags">
@@ -149,7 +150,7 @@ export const postQuery = graphql`
 					}
 				}
 			}
-			timeToRead
+			
 		}
 		file(relativePath: { eq: $imageUrl}) {
 			childImageSharp{

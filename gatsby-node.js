@@ -14,7 +14,7 @@ const _ = require('lodash')
 
 //So, on createNode, it's executed each time one node is created in the graphql Schema. Could be something like a post or file system or image or url.
 //So, instead of writing the path for each posts, we want to generate it from the title automatically.
-//So create a new field in a node, we can transform it, etc.
+//So create a new field in a node, and we can transform it, etc.
 exports.onCreateNode = ({ node, actions }) => {
 	const { createNodeField } = actions
 	//Check the type of the node
