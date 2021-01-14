@@ -15,6 +15,9 @@ const Hero = () => {
 		// </div>
 		<header className="hero">
 			<div className="section-center hero-center">
+				<div className="underline">
+					<Image fluid={fluid} className="hero-img" />
+				</div>
 				<article className="hero-info">
 					<div>
 						<div className="underline">
@@ -26,7 +29,7 @@ const Hero = () => {
 						</div>
 					</div>
 				</article>
-				<Image fluid={fluid} className="hero-img" />
+				
 			</div>
 		</header>
 	)
@@ -37,7 +40,7 @@ const query = graphql`
 	{
 		file(relativePath: { eq: "danniel-headshot.jpg"}) {
 			childImageSharp {
-				fluid(maxWidth: 300) {
+				fluid(maxWidth: 600) {
 					...GatsbyImageSharpFluid
 				}
 			}
