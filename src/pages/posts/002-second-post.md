@@ -1,5 +1,5 @@
 ---
-title: 'Second Post - HTML'
+title: 'HTML Tutorial'
 date: '2020-11-13 09:00:00'
 author: 'Danniel Hansel'
 image: '../../images/html.jpg'

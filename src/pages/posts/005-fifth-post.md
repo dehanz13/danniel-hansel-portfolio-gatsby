@@ -1,5 +1,5 @@
 ---
-title: 'Fifth Post - How To Excel in Marketing'
+title: 'How To Excel in Marketing'
 date: '2020-11-28 13:00:00'
 author: 'Maggie Phan'
 image: '../../images/fifth-post-thumbnail.jpg'

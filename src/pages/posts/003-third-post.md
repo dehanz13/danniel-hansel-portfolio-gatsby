@@ -1,5 +1,5 @@
 ---
-title: 'Third Post - React Bootstrap vs Reactstrap'
+title: 'React Bootstrap vs Reactstrap'
 date: '2020-11-13 11:00:00'
 author: 'Danniel Hansel'
 image: '../../images/bootstrap.png'
