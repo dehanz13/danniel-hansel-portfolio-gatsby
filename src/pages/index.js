@@ -6,17 +6,24 @@ import SEO from "../components/seo"
 import Post from "../components/Post"
 import PaginationLinks from '../components/PaginationLinks'
 import Hero from '../components/Hero'
+import Projects from '../components/Projects'
 
 const IndexPage = () => {
   const postsPerPage = 5;
   //We need number of pages but we cant calculate the number of pages outside here because we need the 'data' from render={data => {
   let numberOfPages
   return(
-  <Layout pageTitle="Danniel Hansel">
+  <Layout pageTitle="">
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-    {/* <Hero />
+    <Hero />
+    {/* <Projects />
+    <Blogs /> */}
+    <Projects />
 
-    <StaticQuery 
+
+
+
+    {/* <StaticQuery 
       query={indexQuery} 
       render={data => {
         numberOfPages = Math.ceil(data.allMarkdownRemark.totalCount / postsPerPage)

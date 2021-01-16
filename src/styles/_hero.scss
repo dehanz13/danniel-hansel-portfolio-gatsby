@@ -6,6 +6,25 @@
   position: relative;
 }
 
+.hero_header {
+  min-height: 75vh;
+  background-size: cover;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  //background-color: #181818;
+}
+
+.hero_intro {
+  padding: 1rem 2rem;
+  background-color: rgba(129, 34, 129, 0.533);
+
+}
+
+.hero_image {
+  //display: block;
+  background-color: rgba(34, 129, 82, 0.533);
+}
 .hero-center {
   height: 100%;
   display: grid;
