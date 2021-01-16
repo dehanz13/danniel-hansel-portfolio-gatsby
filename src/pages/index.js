@@ -14,7 +14,7 @@ const IndexPage = () => {
   return(
   <Layout pageTitle="Danniel Hansel">
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-    <Hero />
+    {/* <Hero />
 
     <StaticQuery 
       query={indexQuery} 
@@ -39,7 +39,7 @@ const IndexPage = () => {
           </div>
         )
       }}
-    />  
+    />   */}
   </Layout>
   )
 }
