@@ -31,7 +31,9 @@ const Hero = () => {
 			<div className="hero_intro">
 				<h1>Hi, I'm Danniel</h1>
 				<p>Front End Developer / Blogger / Traveler</p>
-
+				<Link to="/contact/">
+					Contact Me
+				</Link>
 			</div>
 			<div className="hero_image"> 
 				{/* <Image fluid={fluid} alt="" /> */}
