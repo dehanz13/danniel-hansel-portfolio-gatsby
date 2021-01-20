@@ -1,14 +1,22 @@
 import React from 'react'
 import Image from 'gatsby-image'
+// import { Link as GatsbyLink } from 'gatsby-link'
 import { Link } from 'gatsby'
 import { graphql, useStaticQuery } from 'gatsby'
 
 const Hero = () => {
+	// const StyledLink = styled(GatsbyLink)
+	// 	color: aqua;
+	// 	;
+	
 	const {
 		file: {
 			childImageSharp: { fluid },
 		},
 	} = useStaticQuery(query)
+
+	
+
 	return(
 		// <header className="hero">
 		// 	<div className="section-center hero-center">
@@ -31,14 +39,16 @@ const Hero = () => {
 			<div className="hero_intro">
 				<h1>Hi, I'm Danniel</h1>
 				<p>Front End Developer / Blogger / Traveler</p>
-				<Link to="/contact/">
+				<Link to="/contact/" >
 					Contact Me
 				</Link>
+				<Image fluid={fluid} alt="" className="hero_image"/>
 			</div>
-			<div className="hero_image"> 
-				{/* <Image fluid={fluid} alt="" /> */}
+			
+			{/* <div className="hero_image"> 
+				<Image fluid={fluid} alt="" />
 				<p>IMAGE</p>
-			</div>
+			</div> */}
 		</header>
 
 	)
