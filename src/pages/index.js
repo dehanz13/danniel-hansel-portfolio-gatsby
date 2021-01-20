@@ -16,14 +16,11 @@ const IndexPage = () => {
   <Layout pageTitle="">
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
     <Hero />
-    {/* <Projects />
-    <Blogs /> */}
+    {/* <Blogs /> */}
+    <h1>Projects</h1>
     <Projects />
-
-
-
-
-    {/* <StaticQuery 
+    <h1>Blogs</h1>
+    <StaticQuery 
       query={indexQuery} 
       render={data => {
         numberOfPages = Math.ceil(data.allMarkdownRemark.totalCount / postsPerPage)
@@ -46,7 +43,7 @@ const IndexPage = () => {
           </div>
         )
       }}
-    />   */}
+    />  
   </Layout>
   )
 }

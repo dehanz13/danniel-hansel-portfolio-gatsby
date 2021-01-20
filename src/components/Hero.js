@@ -42,7 +42,9 @@ const Hero = () => {
 				<Link to="/contact/" >
 					Contact Me
 				</Link>
-				<Image fluid={fluid} alt="" className="hero_image"/>
+				<div className="hero_image">
+					<Image fluid={fluid} alt="" className="hero_image"/>
+				</div>
 			</div>
 			
 			{/* <div className="hero_image"> 
