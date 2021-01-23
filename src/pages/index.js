@@ -16,7 +16,6 @@ const IndexPage = () => {
   <Layout pageTitle="">
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
     <Hero />
-    {/* <Blogs /> */}
     <h1>Projects</h1>
     <Projects />
     <h1>Blogs</h1>
@@ -34,7 +33,7 @@ const IndexPage = () => {
                 slug={node.fields.slug}
                 date={node.frontmatter.date}
                 body={node.excerpt}
-                fluid={node.frontmatter.image.childImageSharp.fluid}
+                // fluid={node.frontmatter.image.childImageSharp.fluid}
                 tags={node.frontmatter.tags}
                 // timeToRead={node.timeToRead}
               />

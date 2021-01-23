@@ -3,13 +3,13 @@
 	// flex-direction: column;
 	justify-content: space-evenly;
 	padding: 2rem 1rem;
-	background: rgb(211, 19, 19);
+	background: rgba(0,86,179, 0.2);
 	// align-items: center;
 }
 
 .projects_card {
 	width: 33.3%;
-	color: #20c997;
+	color: #000000;;
 	margin: 0 1rem;
 	padding: 2rem;
 	display: flex;
@@ -30,8 +30,8 @@
 	background-image: linear-gradient(
 		transparent 0%, 
 		transparent calc(50% - 9px), 
-		rgba(255,164,161, .5) calc(50% - 9px), 
-		rgba(255,164,161, 0.5) 100%
+		rgba(0,123,255, .5) calc(50% - 9px), 
+		rgba(0,123,255, 0.5) 100%
 	);
 	background-size: 100% 200%;
 	background-position: 0px 0px;
@@ -41,8 +41,8 @@
 	background-image: linear-gradient(
 		transparent 0%,
 		transparent calc(50% - 9px),
-		rgba(38, 19, 110, 1) calc(50% - 9px),
-		rgba(38, 10, 110, 1) 100%
+		rgba(0,86,179, 1) calc(50% - 9px),
+		rgba(0,86,179, 1) 100%
 	);
 	background-position: center center;
 	color: #f7f7f7;
