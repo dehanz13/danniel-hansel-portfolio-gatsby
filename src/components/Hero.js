@@ -4,6 +4,7 @@ import Image from 'gatsby-image'
 import { Link } from 'gatsby'
 import { graphql, useStaticQuery } from 'gatsby'
 
+import SocialLinks from '../constants/socialLinks'
 const Hero = () => {
 	// const StyledLink = styled(GatsbyLink)
 	// 	color: aqua;
@@ -39,18 +40,14 @@ const Hero = () => {
 			<div className="hero_intro">
 				<h1>Hi, I'm Danniel</h1>
 				<p>Front End Developer / Blogger / Traveler</p>
-				<Link to="/contact/" >
+				<Link to="/contact/" className="btn">
 					Contact Me
 				</Link>
+				<SocialLinks />
 				<div className="hero_image">
-					<Image fluid={fluid} alt="" className="hero_image"/>
+					<Image fluid={fluid} alt="" />
 				</div>
 			</div>
-			
-			{/* <div className="hero_image"> 
-				<Image fluid={fluid} alt="" />
-				<p>IMAGE</p>
-			</div> */}
 		</header>
 
 	)

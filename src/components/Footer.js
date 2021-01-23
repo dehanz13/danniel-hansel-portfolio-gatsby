@@ -39,7 +39,7 @@ const Footer = () => (
 						<i className="fab fa-instagram fa-2x" />
 					</a>
 				</li>
-				<li>
+				{/* <li>
 					<a 
 						href="https://www.facebook.com" 
 						target="_blank" 
@@ -48,7 +48,7 @@ const Footer = () => (
 					>
 						<i className="fab fa-google fa-2x" />
 					</a>
-				</li>
+				</li> */}
 				<li>
 					<a 
 						href="https://www.facebook.com" 

@@ -28,3 +28,23 @@
     }
   }
 }
+
+.social-links {
+  margin-top: 1rem;
+  width: 15rem;
+  display: flex;
+  justify-content: space-between;
+}
+.social-link {
+  font-size: 1.75rem;
+  width: 10px;
+  height: 50%;
+  color: var(--clr-grey-1);
+  transition: var(--transition);
+  // size: 50px;
+}
+
+.social-link:hover {
+  color: var(--clr-primary-5);
+
+}
