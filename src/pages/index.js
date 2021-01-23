@@ -38,7 +38,7 @@ const IndexPage = () => {
                 // timeToRead={node.timeToRead}
               />
             ))}
-            <PaginationLinks currentPage={1} numberOfPages={numberOfPages}/>
+            {/* <PaginationLinks currentPage={1} numberOfPages={numberOfPages}/> */}
           </div>
         )
       }}
