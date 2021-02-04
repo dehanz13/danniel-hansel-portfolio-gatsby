@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql, StaticQuery } from 'gatsby'
+import { graphql, StaticQuery, Link } from 'gatsby'
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -42,7 +42,10 @@ const IndexPage = () => {
           </div>
         )
       }}
-    />  
+    />
+    <Link to="/blogs/">
+      Click here
+    </Link>
   </Layout>
   )
 }
