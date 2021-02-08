@@ -24,9 +24,17 @@
 }
 
 .hero_intro {
-  padding: 1rem 2rem;
-  // background-color: rgba(129, 34, 129, 0.533);
-
+  padding: 1rem 0rem;
+  min-height: 50vh;
+  background-size: auto;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  //background-color: rgba(129, 34, 129, 0.533);
+  // background-color: #181818;
+  background: rgba(0,86,179, 0.2)
 }
 
 .hero_intro a {
@@ -58,11 +66,14 @@
 
 .hero_image {
   //display: block;
-  background-color: rgba(34, 129, 82, 0.533);
-  margin-bottom: 0;
-  border-radius: 25%;
-  max-width: 200px;
+  // background-color: rgba(34, 129, 82, 0.533);
+  // margin-bottom: 0;
+  // border-radius: 25%;
+  // max-width: 200px;
   justify-items: center;
+  display: block;
+  grid-row: 1/1;
+  grid-column: 6/-1;
   // box-shadow: $shadow-2;
 }
 

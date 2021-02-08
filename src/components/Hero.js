@@ -44,9 +44,11 @@ const Hero = () => {
 					Contact Me
 				</Link>
 				<SocialLinks />
-				<div className="hero_image">
+				
+				{/* <Image fluid={fluid} alt="" /> */}
+				{/* <div className="hero_image">
 					<Image fluid={fluid} alt="" />
-				</div>
+				</div> */}
 			</div>
 		</header>
 
@@ -55,9 +57,9 @@ const Hero = () => {
 
 const query = graphql`
 	query {
-		file(relativePath: { eq: "danniel-headshot.jpg"}) {
+		file(relativePath: { eq: "dh-headshot2.png"}) {
 			childImageSharp {
-				fluid(maxHeight: 600) {
+				fluid(maxHeight: 500) {
 					...GatsbyImageSharpFluid
 				}
 			}

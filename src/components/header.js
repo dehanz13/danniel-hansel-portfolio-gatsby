@@ -26,7 +26,12 @@ class Header extends React.Component {
   }
   // const [isOpen, setIsOpen] = useState(false);
   // const toggle = () => setIsOpen(!isOpen);
-
+  // <NavItem>
+  //   <NavLink href="/team">Team</NavLink>
+  // </NavItem>
+  // <NavItem>
+  //   <NavLink href="/tags">Tags</NavLink>
+  // </NavItem>
   render() {
     return (
       <div>
@@ -40,12 +45,6 @@ class Header extends React.Component {
               </NavItem>
               <NavItem>
                 <NavLink href="/projects">Projects</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="/team">Team</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="/tags">Tags</NavLink>
               </NavItem>
               <NavItem>
                 <NavLink href="/about">About</NavLink>

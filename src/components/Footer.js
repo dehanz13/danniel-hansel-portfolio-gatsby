@@ -3,9 +3,9 @@ import React from 'react'
 //Going to use a lot of classes. Feel free to look at the Sass and learn why I use this class or that one and where the styling coming from.
 const Footer = () => (
 	<div className="site-footer">
-		<h4 className="text-center">
-			Code Blog
-		</h4>
+		<h5 className="text-center">
+		© Danniel Hansel 2021
+		</h5>
 		<p className="text-center">Follow us on Social Media!</p>
 		<div className="footer-social-links">
 			<ul className="social-links-list">

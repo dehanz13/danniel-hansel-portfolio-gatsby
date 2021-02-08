@@ -1,17 +1,18 @@
 .projects {
-	display: flex;
+	display: inline-block;
+	width: 100%;
 	// flex-direction: column;
 	justify-content: space-evenly;
-	padding: 2rem 1rem;
+	padding: 2rem 2rem;
 	background: rgba(0,86,179, 0.2);
 	// align-items: center;
 }
 
 .projects_card {
-	width: 33.3%;
+	//width: 33.3%;
 	color: #000000;;
 	margin: 0 1rem;
-	padding: 2rem;
+	padding: 1rem;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
